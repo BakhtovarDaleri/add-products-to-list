@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Список товаров</h1>
+    <ul class="products">
+      <!-- Список товаров будет сгенерирован здесь -->
+    </ul>
+
+    <script>
+      // Исходный массив с товарами
+      const products = ["Мышка", "Клавиатура", "Наушники"];
+      // Новые товары, которые нужно добавить ["Монитор", "Принтер", "Флешка"];
+      const newProducts = ["Монитор", "Принтер", "Флешка"];
+
+      products.push(newProducts[0]); // Добавляем первый новый товар в массив products
+      products.push(newProducts[1]); // Добавляем второй новый товар в массив products
+      products.push(newProducts[2]); // Добавляем третий новый товар в массив products
+
+      // Находим элемент ul по классу
+      const ul = document.querySelector(".products");
+
+      // Цикл для добавления товаров в список ul с помощью метода forEach
+      products.forEach((product) => {
+        // Создаем элемент li
+        const liEl = document.createElement("li");
+        // Присваиваем текст товара
+        liEl.textContent = product;
+        // Новый элемент li добавляем в ul
+        ul.appendChild(liEl);
+      });
+    </script>
+  </body>
+</html>
